@@ -125,20 +125,6 @@
             transition: transform 0.3s ease;
         }
     </style>
-    
-    <style>
-        /* 添加防误触反馈样式 */
-        .card {
-            touch-action: pan-y; /* 优化垂直滚动 */
-            transition: transform 1s cubic-bezier(0.18, 0.89, 0.32, 1.28);
-        }
-
-        /* 滑动时的临时状态 */
-        .card.swiping {
-            transform: scale(0.98);
-            transition-duration: 1s;
-        }
-    </style>
 
     <style>
         /* 接近底部时禁用入场动画 */
@@ -322,12 +308,15 @@
             let touchTimer;
             
             img.addEventListener('touchstart', () => {
-                touchTimer = setTimeout(() => showModal(img), 100);
+                touchTimer = setTimeout(() => showModal(img), 300);
             });
 
             img.addEventListener('touchend', () => {
                 clearTimeout(touchTimer);
             });
+
+            // 点击事件
+            img.addEventListener('click', () => showModal(img));
         });
 
         function showModal(img) {
@@ -421,98 +410,6 @@
 
     // 初始化动画控制
     animationController.init();
-</script>
-
-<script>
-    // 防误触系统
-    const touchManager = {
-        threshold: 200,    // 滑动阈值(像素)
-        timeThreshold: 240, // 时间阈值(毫秒)
-        startX: 0,
-        startY: 0,
-        startTime: 0,
-        isScrolling: false,
-
-        init() {
-            this.bindEvents();
-        },
-
-        bindEvents() {
-            document.addEventListener('touchstart', this.handleStart.bind(this), { passive: true });
-            document.addEventListener('touchmove', this.handleMove.bind(this), { passive: true });
-            document.addEventListener('touchend', this.handleEnd.bind(this));
-        },
-
-        handleStart(e) {
-            const touch = e.touches[0];
-            this.startX = touch.clientX;
-            this.startY = touch.clientY;
-            this.startTime = Date.now();
-            this.isScrolling = false;
-            
-            // 添加临时类名
-            if (e.target.closest('.card')) {
-                e.target.closest('.card').classList.add('swiping');
-            }
-        },
-
-        handleMove(e) {
-            if (!this.startX || !this.startY) return;
-            
-            const touch = e.touches[0];
-            const deltaX = touch.clientX - this.startX;
-            const deltaY = touch.clientY - this.startY;
-            
-            // 检测是否达到滑动阈值
-            if (Math.abs(deltaY) > this.threshold || Math.abs(deltaX) > this.threshold) {
-                this.isScrolling = true;
-            }
-        },
-
-        handleEnd(e) {
-            const card = e.target.closest('.card');
-            if (card) card.classList.remove('swiping');
-
-            // 判断是否误触
-            const isFastSwipe = Date.now() - this.startTime < this.timeThreshold;
-            if (this.isScrolling || isFastSwipe) {
-                e.preventDefault();
-                this.cancelClick(card);
-                return;
-            }
-
-            // 正常点击处理
-            this.handleClick(e);
-        },
-
-        cancelClick(card) {
-            // 临时禁用点击
-            card.style.pointerEvents = 'none';
-            setTimeout(() => {
-                card.style.pointerEvents = 'auto';
-            }, 100);
-        },
-
-        handleClick(e) {
-            // 点击处理逻辑
-            const img = e.target.closest('img');
-            if (img) showModal(img);
-        }
-    };
-
-    // 初始化防误触系统
-    touchManager.init();
-
-    // 点击监听器
-    document.querySelectorAll('.card img').forEach(img => {
-        img.addEventListener('click', function(e) {
-            if (touchManager.isScrolling) {
-                e.stopImmediatePropagation();
-                return;
-            }
-            showModal(this);
-        });
-    });
 </script>
 
     <script>
