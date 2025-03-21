@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Oil P</title>
+    <title>Oil P--</title>
     <style>
          * {
      box-sizing: border-box;
@@ -16,7 +16,7 @@
     min-height: 100vh;
             display: grid;
             place-content: center;
-            padding: 5vh 5vw;
+            padding: 2vh 8vw;
             background: #f7d6ff;
      background: #e5e5e5;
  }
@@ -30,7 +30,7 @@
 
  .cards {
             display: grid;
-            gap: 1.5rem;
+            gap: 1rem;
             grid-auto-flow: dense;
             /* 默认移动端布局 */
             grid-template-columns: repeat(2, 2fr);
@@ -55,7 +55,7 @@
         /* 桌面布局 (1024px 以上) */
         @media (min-width: 1024px) {
             .cards {
-                grid-template-columns: repeat(5, 3fr);
+                grid-template-columns: repeat(4, 3fr);
             }
 
             .card:nth-of-type(4n),
@@ -67,13 +67,6 @@
                 grid-row: span 1;
             }
         }
-
- .cards {
-     display: grid;
-     gap: 2rem;
-     /* 自动排列 */
-     grid-auto-flow: dense;
- }
 
  .card {
      animation: slide-fade-in both;
@@ -88,17 +81,9 @@
             color: white;
             overflow: hidden;
      background-image: linear-gradient(to bottom right, #91defe, #99c0f9, #bdb6ec, #d7b3e3, #efb3d5, #f9bccc);
-     display: flex;
-     justify-content: center;
-     align-items: center;
- }
-
-        .card {
-            aspect-ratio: 1; /* 保持正方形比例 */
-            cursor: pointer;
+     aspect-ratio: 1; /* 保持正方形比例 */
             transition: box-shadow 0.3s ease;
-            overflow: hidden; /* 确保图片缩放不会溢出 */
-        }
+ }
 
             /* 悬停效果 */
             .card:hover {
@@ -114,7 +99,7 @@
 
             /* 图片悬停放大效果 */
             .card:hover img {
-                transform: scale(1.05);
+                transform: scale(1.2);
             }
 
         /* 放大模态框样式 */
@@ -140,166 +125,176 @@
             transition: transform 0.3s ease;
         }
     </style>
+    
+    <style>
+        /* 接近底部时禁用入场动画 */
+        .card.no-entry-animation {
+            animation: parallax linear both;
+            animation-timeline: scroll(root block);
+        }
+        </style>
 </head>
 
 <body>
     <div class="cards">
         <!-- 卡片示例 - 请将图片路径替换为你自己的 -->
-        <div class="card"><img src="1.jpg" alt="加载失败"></div>
-        <div class="card"><img src="2.jpg" alt="加载失败"></div>
-        <div class="card"><img src="3.jpg" alt="加载失败"></div>
-        <div class="card"><img src="4.jpg" alt="加载失败"></div>
-        <div class="card"><img src="5.jpg" alt="加载失败"></div>
-        <div class="card"><img src="6.jpg" alt="加载失败"></div>
-        <div class="card"><img src="7.jpg" alt="加载失败"></div>
-        <div class="card"><img src="8.jpg" alt="加载失败"></div>
-        <div class="card"><img src="9.jpg" alt="加载失败"></div>
-        <div class="card"><img src="10.jpg" alt="加载失败"></div>
-        <div class="card"><img src="11.jpg" alt="加载失败"></div>
-        <div class="card"><img src="12.jpg" alt="加载失败"></div>
-        <div class="card"><img src="13.jpg" alt="加载失败"></div>
-        <div class="card"><img src="14.jpg" alt="加载失败"></div>
-        <div class="card"><img src="15.jpg" alt="加载失败"></div>
-        <div class="card"><img src="16.jpg" alt="加载失败"></div>
-        <div class="card"><img src="17.jpg" alt="加载失败"></div>
-        <div class="card"><img src="18.jpg" alt="加载失败"></div>
-        <div class="card"><img src="19.jpg" alt="加载失败"></div>
-        <div class="card"><img src="20.jpg" alt="加载失败"></div>
-        <div class="card"><img src="21.jpg" alt="加载失败"></div>
-        <div class="card"><img src="22.jpg" alt="加载失败"></div>
-        <div class="card"><img src="23.jpg" alt="加载失败"></div>
-        <div class="card"><img src="24.jpg" alt="加载失败"></div>
-        <div class="card"><img src="24.jpg" alt="加载失败"></div>
-        <div class="card"><img src="25.jpg" alt="加载失败"></div>
-        <div class="card"><img src="26.jpg" alt="加载失败"></div>
-        <div class="card"><img src="27.jpg" alt="加载失败"></div>
-        <div class="card"><img src="28.jpg" alt="加载失败"></div>
-        <div class="card"><img src="29.jpg" alt="加载失败"></div>
-        <div class="card"><img src="30.jpg" alt="加载失败"></div>
-        <div class="card"><img src="31.jpg" alt="加载失败"></div>
-        <div class="card"><img src="32.jpg" alt="加载失败"></div>
-        <div class="card"><img src="33.jpg" alt="加载失败"></div>
-        <div class="card"><img src="34.jpg" alt="加载失败"></div>
-        <div class="card"><img src="35.jpg" alt="加载失败"></div>
-        <div class="card"><img src="36.jpg" alt="加载失败"></div>
-        <div class="card"><img src="37.jpg" alt="加载失败"></div>
-        <div class="card"><img src="38.jpg" alt="加载失败"></div>
-        <div class="card"><img src="39.jpg" alt="加载失败"></div>
-        <div class="card"><img src="40.jpg" alt="加载失败"></div>
-        <div class="card"><img src="41.jpg" alt="加载失败"></div>
-        <div class="card"><img src="42.jpg" alt="加载失败"></div>
-        <div class="card"><img src="43.jpg" alt="加载失败"></div>
-        <div class="card"><img src="44.jpg" alt="加载失败"></div>
-        <div class="card"><img src="45.jpg" alt="加载失败"></div>
-        <div class="card"><img src="46.jpg" alt="加载失败"></div>
-        <div class="card"><img src="47.jpg" alt="加载失败"></div>
-        <div class="card"><img src="48.jpg" alt="加载失败"></div>
-        <div class="card"><img src="49.jpg" alt="加载失败"></div>
-        <div class="card"><img src="50.jpg" alt="加载失败"></div>
-        <div class="card"><img src="51.jpg" alt="加载失败"></div>
-        <div class="card"><img src="52.jpg" alt="加载失败"></div>
-        <div class="card"><img src="53.jpg" alt="加载失败"></div>
-        <div class="card"><img src="54.jpg" alt="加载失败"></div>
-        <div class="card"><img src="55.jpg" alt="加载失败"></div>
-        <div class="card"><img src="56.jpg" alt="加载失败"></div>
-        <div class="card"><img src="57.jpg" alt="加载失败"></div>
-        <div class="card"><img src="58.jpg" alt="加载失败"></div>
-        <div class="card"><img src="59.jpg" alt="加载失败"></div>
-        <div class="card"><img src="60.jpg" alt="加载失败"></div>
-        <div class="card"><img src="61.jpg" alt="加载失败"></div>
-        <div class="card"><img src="62.jpg" alt="加载失败"></div>
-        <div class="card"><img src="63.jpg" alt="加载失败"></div>
-        <div class="card"><img src="64.jpg" alt="加载失败"></div>
-        <div class="card"><img src="65.jpg" alt="加载失败"></div>
-        <div class="card"><img src="66.jpg" alt="加载失败"></div>
-        <div class="card"><img src="67.jpg" alt="加载失败"></div>
-        <div class="card"><img src="68.jpg" alt="加载失败"></div>
-        <div class="card"><img src="70.jpg" alt="加载失败"></div>
-        <div class="card"><img src="71.jpg" alt="加载失败"></div>
-        <div class="card"><img src="72.jpg" alt="加载失败"></div>
-        <div class="card"><img src="74.jpg" alt="加载失败"></div>
-        <div class="card"><img src="75.jpg" alt="加载失败"></div>
-        <div class="card"><img src="76.jpg" alt="加载失败"></div>
-        <div class="card"><img src="77.jpg" alt="加载失败"></div>
-        <div class="card"><img src="78.jpg" alt="加载失败"></div>
-        <div class="card"><img src="79.jpg" alt="加载失败"></div>
-        <div class="card"><img src="80.jpg" alt="加载失败"></div>
-        <div class="card"><img src="81.jpg" alt="加载失败"></div>
-        <div class="card"><img src="82.jpg" alt="加载失败"></div>
-        <div class="card"><img src="83.jpg" alt="加载失败"></div>
-        <div class="card"><img src="84.jpg" alt="加载失败"></div>
-        <div class="card"><img src="85.jpg" alt="加载失败"></div>
-        <div class="card"><img src="86.jpg" alt="加载失败"></div>
-        <div class="card"><img src="87.jpg" alt="加载失败"></div>
-        <div class="card"><img src="88.jpg" alt="加载失败"></div>
-        <div class="card"><img src="89.jpg" alt="加载失败"></div>
-        <div class="card"><img src="90.jpg" alt="加载失败"></div>
-        <div class="card"><img src="91.jpg" alt="加载失败"></div>
-        <div class="card"><img src="92.jpg" alt="加载失败"></div>
-        <div class="card"><img src="93.jpg" alt="加载失败"></div>
-        <div class="card"><img src="94.jpg" alt="加载失败"></div>
-        <div class="card"><img src="95.jpg" alt="加载失败"></div>
-        <div class="card"><img src="96.jpg" alt="加载失败"></div>
-        <div class="card"><img src="97.jpg" alt="加载失败"></div>
-        <div class="card"><img src="98.jpg" alt="加载失败"></div>
-        <div class="card"><img src="99.jpg" alt="加载失败"></div>
-        <div class="card"><img src="100.jpg" alt="加载失败"></div>
-        <div class="card"><img src="101.jpg" alt="加载失败"></div>
-        <div class="card"><img src="102.jpg" alt="加载失败"></div>
-        <div class="card"><img src="103.jpg" alt="加载失败"></div>
-        <div class="card"><img src="104.jpg" alt="加载失败"></div>
-        <div class="card"><img src="105.jpg" alt="加载失败"></div>
-        <div class="card"><img src="106.jpg" alt="加载失败"></div>
-        <div class="card"><img src="107.jpg" alt="加载失败"></div>
-        <div class="card"><img src="108.jpg" alt="加载失败"></div>
-        <div class="card"><img src="109.jpg" alt="加载失败"></div>
-        <div class="card"><img src="110.jpg" alt="加载失败"></div>
-        <div class="card"><img src="111.jpg" alt="加载失败"></div>
-        <div class="card"><img src="112.jpg" alt="加载失败"></div>
-        <div class="card"><img src="113.jpg" alt="加载失败"></div>
-        <div class="card"><img src="114.jpg" alt="加载失败"></div>
-        <div class="card"><img src="115.jpg" alt="加载失败"></div>
-        <div class="card"><img src="116.jpg" alt="加载失败"></div>
-        <div class="card"><img src="117.jpg" alt="加载失败"></div>
-        <div class="card"><img src="118.jpg" alt="加载失败"></div>
-        <div class="card"><img src="119.jpg" alt="加载失败"></div>
-        <div class="card"><img src="120.jpg" alt="加载失败"></div>
-        <div class="card"><img src="121.jpg" alt="加载失败"></div>
-        <div class="card"><img src="122.jpg" alt="加载失败"></div>
-        <div class="card"><img src="123.jpg" alt="加载失败"></div>
-        <div class="card"><img src="124.jpg" alt="加载失败"></div>
-        <div class="card"><img src="125.jpg" alt="加载失败"></div>
-        <div class="card"><img src="126.jpg" alt="加载失败"></div>
-        <div class="card"><img src="127.jpg" alt="加载失败"></div>
-        <div class="card"><img src="128.jpg" alt="加载失败"></div>
-        <div class="card"><img src="129.jpg" alt="加载失败"></div>
-        <div class="card"><img src="130.jpg" alt="加载失败"></div>
-        <div class="card"><img src="131.jpg" alt="加载失败"></div>
-        <div class="card"><img src="132.jpg" alt="加载失败"></div>
-        <div class="card"><img src="133.jpg" alt="加载失败"></div>
-        <div class="card"><img src="134.jpg" alt="加载失败"></div>
-        <div class="card"><img src="135.jpg" alt="加载失败"></div>
-        <div class="card"><img src="136.jpg" alt="加载失败"></div>
-        <div class="card"><img src="137.jpg" alt="加载失败"></div>
-        <div class="card"><img src="138.jpg" alt="加载失败"></div>
-        <div class="card"><img src="139.jpg" alt="加载失败"></div>
-        <div class="card"><img src="140.jpg" alt="加载失败"></div>
-        <div class="card"><img src="141.jpg" alt="加载失败"></div>
-        <div class="card"><img src="142.jpg" alt="加载失败"></div>
-        <div class="card"><img src="143.jpg" alt="加载失败"></div>
-        <div class="card"><img src="144.jpg" alt="加载失败"></div>
-        <div class="card"><img src="145.jpg" alt="加载失败"></div>
-        <div class="card"><img src="146.jpg" alt="加载失败"></div>
-        <div class="card"><img src="147.jpg" alt="加载失败"></div>
-        <div class="card"><img src="148.jpg" alt="加载失败"></div>
-        <div class="card"><img src="149.jpg" alt="加载失败"></div>
-        <div class="card"><img src="150.jpg" alt="加载失败"></div>
-        <div class="card"><img src="151.jpg" alt="加载失败"></div>
-        <div class="card"><img src="152.jpg" alt="加载失败"></div>
-        <div class="card"><img src="153.jpg" alt="加载失败"></div>
-        <div class="card"><img src="https://gips3.baidu.com/it/u=1821127123,1149655687&fm=3028&app=3028&f=JPEG&fmt=auto?w=720&h=1280" alt="加载失败"></div>
+        <div class="card"><img src="https://images.steamusercontent.com/ugc/15305629788674200/92FCFC7EB70F4235143B31F94D571F7AB6217F7A/" alt="加载失败"></div>
+        <div class="card"><img src="https://images.steamusercontent.com/ugc/15305629788674329/ABF8B0A0F4FDC3643E23219016435F352A2D8B87/" alt="加载失败"></div>
+        <div class="card"><img src="https://images.steamusercontent.com/ugc/15305629788674480/2550ECAB925B5EF50E3F95F3B0660571DD8BC5EE/" alt="加载失败"></div>
+        <div class="card"><img src="https://images.steamusercontent.com/ugc/15305629788674731/22AC1E808D66B6DA1AAD57B2661AFFB8673CAC20/" alt="加载失败"></div>
+        <div class="card"><img src="https://images.steamusercontent.com/ugc/15305629788674870/4C619C330163167517B2EBD93ED58729C79E0D2D/" alt="加载失败"></div>
+        <div class="card"><img src="https://images.steamusercontent.com/ugc/15305629788676150/8375DE2A785D2B53F4304A302365C7B68EBAA13D/" alt="加载失败"></div>
+        <div class="card"><img src="https://images.steamusercontent.com/ugc/15305629788681008/E5FAC94D1A6FFA965C741ED9291D562E44C43689/" alt="加载失败"></div>
+        <div class="card"><img src="https://images.steamusercontent.com/ugc/15305629788681408/306BC895737E8FAD308ABB78E2B9010646C27AD3/" alt="加载失败"></div>
+        <div class="card"><img src="https://images.steamusercontent.com/ugc/15305629788682312/62EB52F7B50E5D37D2FC8089B70A59A26409AA59/" alt="加载失败"></div>
+        <div class="card"><img src="https://images.steamusercontent.com/ugc/15305629788682799/864233472569438A332D4AF9316FCA3A42D8B02D/" alt="加载失败"></div>
+        <div class="card"><img src="https://images.steamusercontent.com/ugc/15305629788688478/DCC5165FC4FB5D475C314189994C7A2A6AE4AC36/" alt="加载失败"></div>
+        <div class="card"><img src="https://images.steamusercontent.com/ugc/15305629788688676/3348B14FE6721FE05BAF670F1102DF5B89646E5F/" alt="加载失败"></div>
+        <div class="card"><img src="https://images.steamusercontent.com/ugc/15305629788688810/423F793FF7DCF7558A313A55B33E817680808A42/" alt="加载失败"></div>
+        <div class="card"><img src="https://images.steamusercontent.com/ugc/15305629788688897/ADD904FEFAE5B7C30417F14FA40C859875CB57BE/" alt="加载失败"></div>
+        <div class="card"><img src="https://images.steamusercontent.com/ugc/15305629788688980/553CFCE93D485730DE9CDCB1A0AE6C5510BF9F60/" alt="加载失败"></div>
+        <div class="card"><img src="https://images.steamusercontent.com/ugc/15305629788689386/10991411F507774A3E5A56BC4E356219808AEC37/" alt="加载失败"></div>
+        <div class="card"><img src="https://images.steamusercontent.com/ugc/15305629788689689/3F89622B79BCBFCE704C6BE763772DF0C283002C/" alt="加载失败"></div>
+        <div class="card"><img src="https://images.steamusercontent.com/ugc/15305629788689839/A0CCC4D5B04423B270C92246859C6E8BBF120F4D/" alt="加载失败"></div>
+        <div class="card"><img src="https://images.steamusercontent.com/ugc/15305629788689956/C013369FC4B6AA3BA011D8A646D476AA5B169A01/" alt="加载失败"></div>
+        <div class="card"><img src="https://images.steamusercontent.com/ugc/15305629788690026/1A12D7868F37AE1EAED37E61718E0B4FDC559713/" alt="加载失败"></div>
+        <div class="card"><img src="https://images.steamusercontent.com/ugc/15305629788694874/5070D98BE78AB6836C4D91B0EE3A9B4C47E89544/" alt="加载失败"></div>
+        <div class="card"><img src="https://images.steamusercontent.com/ugc/15305629788695242/1E0AE30D2B94FDD4F4B8623B441B302EF1E4956A/" alt="加载失败"></div>
+        <div class="card"><img src="https://images.steamusercontent.com/ugc/15305629788695426/C8E867A43FD650B4855EC1CCAEC20355F8E310B2/" alt="加载失败"></div>
+        <div class="card"><img src="https://images.steamusercontent.com/ugc/15305629788695654/F62C4CBF9A59AD47E5F533664CEDCE1FD8C1BF11/" alt="加载失败"></div>
+        <div class="card"><img src="https://images.steamusercontent.com/ugc/15305629788695760/187F97733FF3CAD159931996236FAE3C2CFDB110/" alt="加载失败"></div>
+        <div class="card"><img src="https://images.steamusercontent.com/ugc/15305629788695834/87789C7ED828AC907BEBFCD7240D378745CF728D/" alt="加载失败"></div>
+        <div class="card"><img src="https://images.steamusercontent.com/ugc/15305629788695950/B17A5794F74E5B505D86EB00B0D36135976FFF85/" alt="加载失败"></div>
+        <div class="card"><img src="https://images.steamusercontent.com/ugc/15305629788696097/A6193211EE9771D12BF574E948B9A14ACECD00C2/" alt="加载失败"></div>
+        <div class="card"><img src="https://images.steamusercontent.com/ugc/15305629788696156/48154361B1C3B6E2D87896DA3520A0CD6144EE17/" alt="加载失败"></div>
+        <div class="card"><img src="https://images.steamusercontent.com/ugc/15305629788694345/2E3534DA0D7D48AE870A1FEB66474ABD8A933A6F/" alt="加载失败"></div>
+        <div class="card"><img src="https://images.steamusercontent.com/ugc/15305629788701708/943B10DA5577F8279C0FD843D9AE12B000B04166/" alt="加载失败"></div>
+        <div class="card"><img src="https://images.steamusercontent.com/ugc/15305629788701915/8CA27C710B2AC7E0EBCE14B454F665B32A9655FB/" alt="加载失败"></div>
+        <div class="card"><img src="https://images.steamusercontent.com/ugc/15305629788702047/D8513E51A7813E0A958CCE3BE61D128B78BF41C5/" alt="加载失败"></div>
+        <div class="card"><img src="https://images.steamusercontent.com/ugc/15305629788702140/37D941B084B807F95A1BF5235F78AF0E15313290/" alt="加载失败"></div>
+        <div class="card"><img src="https://images.steamusercontent.com/ugc/15305629788702184/8E1780C89897B1A9F16FAAE2801E95CBE96F2F66/" alt="加载失败"></div>
+        <div class="card"><img src="https://images.steamusercontent.com/ugc/15305629788702306/D27E09B196AC9C3E2D1F1710D81E2473DCB11ABF/" alt="加载失败"></div>
+        <div class="card"><img src="https://images.steamusercontent.com/ugc/15305629788702507/D181C8B01271F4E43C6F0BF4F641226657724D75/" alt="加载失败"></div>
+        <div class="card"><img src="https://images.steamusercontent.com/ugc/15305629788702634/B219B8C49F3BD8EF3B3144B86B18D2BBB96BE4DC/" alt="加载失败"></div>
+        <div class="card"><img src="https://images.steamusercontent.com/ugc/15305629788702928/DFD937D26F392F3ACEAFA71715DB37245CDE5BFC/" alt="加载失败"></div>
+        <div class="card"><img src="https://images.steamusercontent.com/ugc/15305629788703394/398DDC279E86BCA2900B90338BFCBA0E5B358981/" alt="加载失败"></div>
+        <div class="card"><img src="https://images.steamusercontent.com/ugc/15305629788707627/7AD4684159A1A183F83605E53CC8B886B7166CF9/" alt="加载失败"></div>
+        <div class="card"><img src="https://images.steamusercontent.com/ugc/15305629788707807/19A46A643489AA07A4D2FA6B19EEF714242B2901/" alt="加载失败"></div>
+        <div class="card"><img src="https://images.steamusercontent.com/ugc/15305629788707894/2EBFA483DBB210F3C61655D49B580335C977F909/" alt="加载失败"></div>
+        <div class="card"><img src="https://images.steamusercontent.com/ugc/15305629788708112/CF96EA877D1919F0BE2E1E77337D0F3E4CDB84C0/" alt="加载失败"></div>
+        <div class="card"><img src="https://images.steamusercontent.com/ugc/15305629788708294/09DBD04EFC0CA0CA711806DC9F59CAFFF898E481/" alt="加载失败"></div>
+        <div class="card"><img src="https://images.steamusercontent.com/ugc/15305629788708411/8F4F0A1219131BF853AC6A45183BDA06E400BE0C/" alt="加载失败"></div>
+        <div class="card"><img src="https://images.steamusercontent.com/ugc/15305629788708812/C7E2739BDE1944B025A24A55EB5FD6733B1256F7/" alt="加载失败"></div>
+        <div class="card"><img src="https://images.steamusercontent.com/ugc/15305629788709062/21FA211873A128857E7F07E1E7E7AEE39E0C6F50/" alt="加载失败"></div>
+        <div class="card"><img src="https://images.steamusercontent.com/ugc/15305629788709182/E9D92A091E1B2ED47D9017B5A954194847C5946B/" alt="加载失败"></div>
+        <div class="card"><img src="https://images.steamusercontent.com/ugc/15305629788709282/A7FCF1C196998A765880CBC1396411953D46CAB9/" alt="加载失败"></div>
+        <div class="card"><img src="https://images.steamusercontent.com/ugc/15305629788709561/DE04EC1570DBB181FF182A8591C5E32F9C15B333/" alt="加载失败"></div>
+        <div class="card"><img src="https://images.steamusercontent.com/ugc/15305629788710107/C6DCB8EE4BB9F1EAA4BF99B035EC32678E816B3A/" alt="加载失败"></div>
+        <div class="card"><img src="https://images.steamusercontent.com/ugc/15305629788710213/C6DDBB216D2CF695229299FD63177EAF0B1A9AD1/" alt="加载失败"></div>
+        <div class="card"><img src="https://images.steamusercontent.com/ugc/15305629788710301/02511AF38C0249C3E624641F91035AC37301FC39/" alt="加载失败"></div>
+        <div class="card"><img src="https://images.steamusercontent.com/ugc/15305629788710407/DFA0E3C6A267E18BEB2EBC51E43669582E23948C/" alt="加载失败"></div>
+        <div class="card"><img src="https://images.steamusercontent.com/ugc/15305629788710493/537A0E7BA3D5B5E1A16903F56591BD6FCCD7CDB2/" alt="加载失败"></div>
+        <div class="card"><img src="https://images.steamusercontent.com/ugc/15305629788710633/39710916A0FF5071B874F270FF5EA7FCB2F9AD8C/" alt="加载失败"></div>
+        <div class="card"><img src="https://images.steamusercontent.com/ugc/15305629788710795/517EBD0C0F9CCB1082C470FBCFD88639B8D9730B/" alt="加载失败"></div>
+        <div class="card"><img src="https://images.steamusercontent.com/ugc/15305629788710875/082754749321FF4DCA7B44000869E4FCF27C7BCF/" alt="加载失败"></div>
+        <div class="card"><img src="https://images.steamusercontent.com/ugc/15305629788710985/E6C7CF6AFD742F7E203D75E7E0F479A6B712AC75/" alt="加载失败"></div>
+        <div class="card"><img src="https://images.steamusercontent.com/ugc/15305629788711126/613A0EDC8FD8D012FDAB6629EBDAAA3BB511715D/" alt="加载失败"></div>
+        <div class="card"><img src="https://images.steamusercontent.com/ugc/15305629788711433/D11812003F96ED444F99640161855283A325C457/" alt="加载失败"></div>
+        <div class="card"><img src="https://images.steamusercontent.com/ugc/15305629788711520/FA61363AC98C12D5793E90A2F8EBDC3B95123C33/" alt="加载失败"></div>
+        <div class="card"><img src="https://images.steamusercontent.com/ugc/15305629788711990/58A2B72520E4864AB6F8AD888151A41E0EFC92B6/" alt="加载失败"></div>
+        <div class="card"><img src="https://images.steamusercontent.com/ugc/15305629788712099/332001A95698C4271C68E2E70F857D51ED1D9919/" alt="加载失败"></div>
+        <div class="card"><img src="https://images.steamusercontent.com/ugc/15305629788712521/6AA9159E813A78077410591302DAE562CBB8BEE3/" alt="加载失败"></div>
+        <div class="card"><img src="https://images.steamusercontent.com/ugc/15305629788712644/AEE32EB496B8C160A68B6294455F02833720DC04/" alt="加载失败"></div>
+        <div class="card"><img src="https://images.steamusercontent.com/ugc/15305629788712723/9C912B9C84E710BBB3194FD6768297A8F9B69C2E/" alt="加载失败"></div>
+        <div class="card"><img src="https://images.steamusercontent.com/ugc/15305629788712893/31B4A31014DF8C036ABC76C58FD69529E72ADB2B/" alt="加载失败"></div>
+        <div class="card"><img src="https://images.steamusercontent.com/ugc/15305629788713066/F2263355A6EFCE792967D71EFEC211457D8683CB/" alt="加载失败"></div>
+        <div class="card"><img src="https://images.steamusercontent.com/ugc/15305629788713201/794831448B20BBC6D4F3387AFB2E7418F3ED4480/" alt="加载失败"></div>
+        <div class="card"><img src="https://images.steamusercontent.com/ugc/15305629788713318/2B3F97B0F98D7BDCDCBEC3EF255064994B37FC64/" alt="加载失败"></div>
+        <div class="card"><img src="https://images.steamusercontent.com/ugc/15305629788713433/BE81C4BEB19B4B9487399C4C1B7EE5DDBB22BAC5/" alt="加载失败"></div>
+        <div class="card"><img src="https://images.steamusercontent.com/ugc/15305629788713574/0CD71D716D34CE6FDFC1CEDF4941D6247FF6DB32/" alt="加载失败"></div>
+        <div class="card"><img src="https://images.steamusercontent.com/ugc/15305629788713674/899A4EAA5BD0868166C473CBCBAFBCA22E2F8E96/" alt="加载失败"></div>
+        <div class="card"><img src="https://images.steamusercontent.com/ugc/15305629788713775/53BC53004866277FDB2D57ED60D0CEC65DA29276/" alt="加载失败"></div>
+        <div class="card"><img src="https://images.steamusercontent.com/ugc/15305629788713829/39CF19BBF6DF9547D668C9BF198A3DAD00BAD6B8/" alt="加载失败"></div>
+        <div class="card"><img src="https://images.steamusercontent.com/ugc/15305629788713872/B7C1E50847476F59E577926D182F9D24F12D83EC/" alt="加载失败"></div>
+        <div class="card"><img src="https://images.steamusercontent.com/ugc/15305629788713921/AF6D05E03604CA5037D1F810916266042E738854/" alt="加载失败"></div>
+        <div class="card"><img src="https://images.steamusercontent.com/ugc/15305629788714041/23D64D2712D8D74F6F6392ECFFF952C103E95F04/" alt="加载失败"></div>
+        <div class="card"><img src="https://images.steamusercontent.com/ugc/15305629788714091/EA18B79624C6A04B761F6C277479DFE8BA1EA603/" alt="加载失败"></div>
+        <div class="card"><img src="https://images.steamusercontent.com/ugc/15305629788714160/C072D7B0C9C12310987AE0BE811930C0ED5BB97F/" alt="加载失败"></div>
+        <div class="card"><img src="https://images.steamusercontent.com/ugc/15305629788714385/56C96859E1889C5198C0C94AF367B5C4C99EA6DC/" alt="加载失败"></div>
+        <div class="card"><img src="https://images.steamusercontent.com/ugc/15305629788714450/868ADFD9E9988F1A45DD6678E6229E7660D8F88B/" alt="加载失败"></div>
+        <div class="card"><img src="https://images.steamusercontent.com/ugc/15305629788714621/9D4520E4D444011C4749221577CDFD178AAE88BA/" alt="加载失败"></div>
+        <div class="card"><img src="https://images.steamusercontent.com/ugc/15305629788714684/C4E84F6D6544A18B666D7E4363DBE6ECA11A5FB8/" alt="加载失败"></div>
+        <div class="card"><img src="https://images.steamusercontent.com/ugc/15305629788714764/CDA81224287FD8BDF37185441220C1CB1A3677D8/" alt="加载失败"></div>
+        <div class="card"><img src="https://images.steamusercontent.com/ugc/15305629788714834/6D52760EE7388F9A9206B223B1DCD61D640747EB/" alt="加载失败"></div>
+        <div class="card"><img src="https://images.steamusercontent.com/ugc/15305629788714986/7F49E4FAE084E675EB8F8FF1637235136639FBED/" alt="加载失败"></div>
+        <div class="card"><img src="https://images.steamusercontent.com/ugc/15305629788715149/8DB09EF93CA58AC284C5A41A66D9904FA99E2A5F/" alt="加载失败"></div>
+        <div class="card"><img src="https://images.steamusercontent.com/ugc/15305629788715276/8FBC37F223A7E740EA6702587FB59C99408997B4/" alt="加载失败"></div>
+        <div class="card"><img src="https://images.steamusercontent.com/ugc/15305629788715436/103E717EB97A1DD70087802BEADBF3415A1AF8FF/" alt="加载失败"></div>
+        <div class="card"><img src="https://images.steamusercontent.com/ugc/15305629788715626/2B3A5B26A222E920C9A76DD4CC2F75F0654058AD/" alt="加载失败"></div>
+        <div class="card"><img src="https://images.steamusercontent.com/ugc/15305629788715708/C058FAD72D372E2A6953118D9D877AABB3BB298A/" alt="加载失败"></div>
+        <div class="card"><img src="https://images.steamusercontent.com/ugc/15305629788715904/8BE4046A601193D7DA26D8F74133D075EEA2E5EF/" alt="加载失败"></div>
+        <div class="card"><img src="https://images.steamusercontent.com/ugc/15305629788716136/139532F80A0EC804841D8042A13D290A41960DFC/" alt="加载失败"></div>
+        <div class="card"><img src="https://images.steamusercontent.com/ugc/15305629788716301/F78F338238EEE7C37C94634F27CB96970C716FED/" alt="加载失败"></div>
+        <div class="card"><img src="https://images.steamusercontent.com/ugc/15305629788716499/F42BCCF45B3D3B0BD864887550ECB4B8310B93A4/" alt="加载失败"></div>
+        <div class="card"><img src="https://images.steamusercontent.com/ugc/15305629788716619/DAA3A65807EE9115FA2E8AEEE1E96005B63F9526/" alt="加载失败"></div>
+        <div class="card"><img src="https://images.steamusercontent.com/ugc/15305629788716793/202001B546795F1732CB5F3D855401A75BBEB47E/" alt="加载失败"></div>
+        <div class="card"><img src="https://images.steamusercontent.com/ugc/15305629788716950/2C4B9DA4A4C8783BA472EB5300662345CEDB6891/" alt="加载失败"></div>
+        <div class="card"><img src="https://images.steamusercontent.com/ugc/15305629788717140/9EC268EEAD5C0C5F313A8199C7F56AB4EA96A626/" alt="加载失败"></div>
+        <div class="card"><img src="https://images.steamusercontent.com/ugc/15305629788717443/6E98F1B187CF0988619B86FC2707BBCF8EE9105D/" alt="加载失败"></div>
+        <div class="card"><img src="https://images.steamusercontent.com/ugc/15305629788717489/5A79DCB2CDA01FEA94325AA3BD23BF4E203D24BB/" alt="加载失败"></div>
+        <div class="card"><img src="https://images.steamusercontent.com/ugc/15305629788717531/2DA40CBE1507410142DCF6F948F8B725C01B2755/" alt="加载失败"></div>
+        <div class="card"><img src="https://images.steamusercontent.com/ugc/15305629788717918/4C750C412FE807E00E1157988B5BBC499FBCFAD5/" alt="加载失败"></div>
+        <div class="card"><img src="https://images.steamusercontent.com/ugc/15305629788718192/203DB43592F7DB13E7EC798570BAC64622C50CAE/" alt="加载失败"></div>
+        <div class="card"><img src="https://images.steamusercontent.com/ugc/15305629788718278/3903D1EC06F533E7F28D3BFCE5418680BD9C8504/" alt="加载失败"></div>
+        <div class="card"><img src="https://images.steamusercontent.com/ugc/15305629788718311/FF0CBC032BB4E8804A98763CEBF9F3668D9F84FF/" alt="加载失败"></div>
+        <div class="card"><img src="https://images.steamusercontent.com/ugc/15305629788718443/0399D73B678CB15439C874D09DC4E51F945A7D1E/" alt="加载失败"></div>
+        <div class="card"><img src="https://images.steamusercontent.com/ugc/15305629788718750/2347F3DA203D6DD56B5D6C9D372759C81534490B/" alt="加载失败"></div>
+        <div class="card"><img src="https://images.steamusercontent.com/ugc/15305629788718864/AF80DCC97DDA3107ED6F9BB41905C6855E3A0745/" alt="加载失败"></div>
+        <div class="card"><img src="https://images.steamusercontent.com/ugc/15305629788718949/934776708F5021E3B52BE1F23ECB169CAF600AF6/" alt="加载失败"></div>
+        <div class="card"><img src="https://images.steamusercontent.com/ugc/15305629788719055/C00979D63F2A2AD34120E91F0D12244A8AE86F47/" alt="加载失败"></div>
+        <div class="card"><img src="https://images.steamusercontent.com/ugc/15305629788719142/B89A64084AE9ADED0E9F60F3E25E930B99649734/" alt="加载失败"></div>
+        <div class="card"><img src="https://images.steamusercontent.com/ugc/15305629788719355/8665C3C897CD5F1C45C8D3BF4BB92B87A899950C/" alt="加载失败"></div>
+        <div class="card"><img src="https://images.steamusercontent.com/ugc/15305629788719552/2DBA3139B8B6DBD45B379BE0DD34C79F1E6820B1/" alt="加载失败"></div>
+        <div class="card"><img src="https://images.steamusercontent.com/ugc/15305629788719658/BAE31E5A73C8F70A8E47168B178E4BB907DE42FF/" alt="加载失败"></div>
+        <div class="card"><img src="https://images.steamusercontent.com/ugc/15305629788719742/4CBC28F6C3F165E3A968FB1A28E256077CB7470F/" alt="加载失败"></div>
+        <div class="card"><img src="https://images.steamusercontent.com/ugc/15305629788719786/35C736F7521702B5D3DD4DA6C235AC66B4584A8C/" alt="加载失败"></div>
+        <div class="card"><img src="https://images.steamusercontent.com/ugc/15305629788719834/E5EDA066E1B79C9F64FA2D37EAE9A722E515B217/" alt="加载失败"></div>
+        <div class="card"><img src="https://images.steamusercontent.com/ugc/15305629788720089/1D6E3E3248D79CEE24BBEDBD0DBDC250BE6D386C/" alt="加载失败"></div>
+        <div class="card"><img src="https://images.steamusercontent.com/ugc/15305629788720156/87B7C16731E98D4DDB2A51AB3743E959DEBBEB6A/" alt="加载失败"></div>
+        <div class="card"><img src="https://images.steamusercontent.com/ugc/15305629788720189/09CBF2C0A1214DA667081486D0A65B608F109BE3/" alt="加载失败"></div>
+        <div class="card"><img src="https://images.steamusercontent.com/ugc/15305629788720244/21E790D41A4D084E92C5C3E998ABE7C75C276ED9/" alt="加载失败"></div>
+        <div class="card"><img src="https://images.steamusercontent.com/ugc/15305629788720329/3E38ED4C21FAA543D6BBB7ED4D0379C050010068/" alt="加载失败"></div>
+        <div class="card"><img src="https://images.steamusercontent.com/ugc/15305629788720423/D96AD402C044CF9A44C82FFAB591CA30E5E725BB/" alt="加载失败"></div>
+        <div class="card"><img src="https://images.steamusercontent.com/ugc/15305629788720541/024F2ECE77BF176897B2BACB8339956FDEB02576/" alt="加载失败"></div>
+        <div class="card"><img src="https://images.steamusercontent.com/ugc/15305629788720596/7C65C6571CF64D5DB903AD63491AC2B7689C411E/" alt="加载失败"></div>
+        <div class="card"><img src="https://images.steamusercontent.com/ugc/15305629788720659/EEDFA469092B997F39A69925EB5F83982FA94207/" alt="加载失败"></div>
+        <div class="card"><img src="https://images.steamusercontent.com/ugc/15305629788720711/BF9DF763F46824E81D1930460FE061F04C190895/" alt="加载失败"></div>
+        <div class="card"><img src="https://images.steamusercontent.com/ugc/15305629788720753/41CC6C2F3156FB19A2D84254C141970B22689B0E/" alt="加载失败"></div>
+        <div class="card"><img src="https://images.steamusercontent.com/ugc/15305629788720802/792AE8F967F3483C6C4FA3F985A4DA189846958A/" alt="加载失败"></div>
+        <div class="card"><img src="https://images.steamusercontent.com/ugc/15305629788720859/46520732B42744C991FEFF507799B78123AE09BD/" alt="加载失败"></div>
+        <div class="card"><img src="https://images.steamusercontent.com/ugc/15305629788720928/9E375A36D439106401788DD6E36659B6B6B88775/" alt="加载失败"></div>
+        <div class="card"><img src="https://images.steamusercontent.com/ugc/15305629788720979/CCCF5E0364A02BA8FBE054CA13D3FCACF47BDA32/" alt="加载失败"></div>
+        <div class="card"><img src="https://images.steamusercontent.com/ugc/15305629788721129/5DCFA2304FE88E8483F1A8D8F5F04B604E6EDBA9/" alt="加载失败"></div>
+        <div class="card"><img src="https://images.steamusercontent.com/ugc/15305629788721307/D90D78C36FBEE4D7214012B36B6EFC0B4ECB74C9/" alt="加载失败"></div>
+        <div class="card"><img src="https://images.steamusercontent.com/ugc/15305629788721426/C3D9D8D8582CCB2485E6B9FD6C812A057B85AE61/" alt="加载失败"></div>
+        <div class="card"><img src="https://images.steamusercontent.com/ugc/15305629788721458/1AF767967AB7F6A2869930E0AA994623FFAAD722/" alt="加载失败"></div>
+        <div class="card"><img src="https://images.steamusercontent.com/ugc/15305629788721606/E369417C54040ECDA7ED5CC863CC7479D49AC34B/" alt="加载失败"></div>
+        <div class="card"><img src="https://images.steamusercontent.com/ugc/15305629788721731/C3943B2C6D2FD179E272748FC716A03FC4EB3575/" alt="加载失败"></div>
+        <div class="card"><img src="https://images.steamusercontent.com/ugc/15305629788721779/74DA408CE5AA5C7D3AAEE2800273EFBF8A9E1B97/" alt="加载失败"></div>
+        <div class="card"><img src="https://images.steamusercontent.com/ugc/15305629788722041/D4E4651FDB24908F85F0F9787B5F4503F2FC0A79/" alt="加载失败"></div>
+        <div class="card"><img src="https://images.steamusercontent.com/ugc/15305629788722320/9AAD2E51FD216434EF1BF12CFBAB74C76BD20D60/" alt="加载失败"></div>
+        <div class="card"><img src="https://images.steamusercontent.com/ugc/15305629788722415/7EF43C328276445AB7D2CCB8DD9B2442F1B18C37/" alt="加载失败"></div>
+        <div class="card"><img src="https://images.steamusercontent.com/ugc/15305629788722490/B13E4ACD87B315D6CEF66DF43D98AE32CFD6A57E/" alt="加载失败"></div>
+        <div class="card"><img src="https://images.steamusercontent.com/ugc/15305629788722783/93CC5FFA9C215E24A7FE86943E0C4E80088A3A57/" alt="加载失败"></div>
+        <div class="card"><img src="https://images.steamusercontent.com/ugc/15305629788722915/A23A737A5B4D17EFE1D1F937A3CD6F9AF011D9CF/" alt="加载失败"></div>
+        <div class="card"><img src="https://images.steamusercontent.com/ugc/15305629788722957/B295019123BAB262064E758E2D1A0F3F9F046007/" alt="加载失败"></div>
+        <div class="card"><img src="https://images.steamusercontent.com/ugc/15305629788723003/DB7A72A9CCD319D1E2701AFF9CB0B788F7E8967C/" alt="加载失败"></div>
+        <div class="card"><img src="https://images.steamusercontent.com/ugc/15305629788723088/6DF680E8AC91A4F2B19EBF87CB2B53EEFF6C9CE4/" alt="加载失败"></div>
+        <div class="card"><img src="https://images.steamusercontent.com/ugc/15305629788723265/59EF3B156F222E0779AEB6A35CA7FF1DB5B49B89/" alt="加载失败"></div>
         <!-- 更多卡片... -->
     </div>
+
+    <div id="scroll-sentinel"></div>
 
     <!-- 图片放大模态框 -->
     <div class="modal">
@@ -342,6 +337,7 @@
             function openModal() {
                 modal.style.display = 'block';
                 modalImg.src = img.src;
+                
                 // 根据方向调整（移动端横竖屏）
                 if (window.innerHeight > window.innerWidth) {
                     modalImg.style.maxWidth = '90%';
@@ -354,7 +350,70 @@
         }
     </script>
 
-    <script>// 点击放大功能
+<script>
+    // 智能动画控制系统
+    const animationController = {
+        threshold: 1, // 滚动到100%时开始处理
+        init() {
+            this.setupIntersectionObserver();
+            this.setupScrollListener();
+        },
+        
+        setupIntersectionObserver() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    const card = entry.target;
+                    const viewProgress = 1 - entry.intersectionRect.height / entry.boundingClientRect.height;
+                    
+                    if (viewProgress > this.threshold && 
+                        entry.boundingClientRect.top > window.innerHeight * 0.8) {
+                        card.classList.add('no-entry-animation');
+                    } else {
+                        card.classList.remove('no-entry-animation');
+                    }
+                });
+            }, {
+                threshold: [0, 0.25, 0.5, 0.75, 1]
+            });
+
+            document.querySelectorAll('.card').forEach(card => {
+                observer.observe(card);
+            });
+        },
+
+        setupScrollListener() {
+            let ticking = false;
+            
+            const checkBottom = () => {
+                const documentHeight = document.documentElement.scrollHeight;
+                const viewportBottom = window.scrollY + window.innerHeight;
+                
+                if (documentHeight - viewportBottom < 100) {
+                    document.querySelectorAll('.card').forEach(card => {
+                        const rect = card.getBoundingClientRect();
+                        if (rect.top > window.innerHeight * 0.4) {
+                            card.classList.add('no-entry-animation');
+                        }
+                    });
+                }
+                ticking = false;
+            };
+
+            window.addEventListener('scroll', () => {
+                if (!ticking) {
+                    requestAnimationFrame(checkBottom);
+                    ticking = true;
+                }
+            });
+        }
+    };
+
+    // 初始化动画控制
+    animationController.init();
+</script>
+
+    <script>
+    // 点击放大功能
         document.querySelectorAll('.card img').forEach(img => {
             img.addEventListener('click', () => {
                 const modal = document.querySelector('.modal');
@@ -376,7 +435,9 @@
             if (e.key === 'Escape') {
                 document.querySelector('.modal').style.display = 'none';
             }
-        });</script>
+        });
+        </script>
+
 </body>
 
 </html>
