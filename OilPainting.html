@@ -304,19 +304,38 @@
     <script>
         // 增强的图片加载检测
         document.querySelectorAll('.card img').forEach(img => {
-            // 移动端触摸延迟处理
-            let touchTimer;
-            
-            img.addEventListener('touchstart', () => {
-                touchTimer = setTimeout(() => showModal(img), 100);
-            });
+            let touchTimer, startY, isTouch = false;
 
-            img.addEventListener('touchend', () => {
-                clearTimeout(touchTimer);
-            });
+img.addEventListener('touchstart', (e) => {
+    isTouch = true;
+    startY = e.touches[0].clientY;
+    touchTimer = setTimeout(() => {
+        showModal(img);
+        isTouch = false; // 长按后标记为非点击
+    }, 100);
+});
 
-            // 点击事件
-            img.addEventListener('click', () => showModal(img));
+img.addEventListener('touchmove', (e) => {
+    const deltaY = e.touches[0].clientY - startY;
+    if (Math.abs(deltaY) > 10) {
+        clearTimeout(touchTimer);
+        isTouch = false;
+    }
+});
+
+img.addEventListener('touchend', () => {
+    clearTimeout(touchTimer);
+    isTouch = false;
+});
+
+img.addEventListener('click', (e) => {
+    if (isTouch) {
+        e.preventDefault();
+        isTouch = false;
+        return;
+    }
+    showModal(img);
+});
         });
 
         function showModal(img) {
